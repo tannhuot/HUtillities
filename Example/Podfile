@@ -1,9 +1,9 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '13.0'
 
 target 'HUtillities_Example' do
-  pod 'HUtillities', :path => '../'
+  pod 'HUtillities'
 
   target 'HUtillities_Tests' do
     inherit! :search_paths

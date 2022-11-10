@@ -22,7 +22,7 @@ pod 'HUtillities'
 
 ## Author
 
-huot, huot@cotafer.com
+Tannhuot
 
 ## License
 

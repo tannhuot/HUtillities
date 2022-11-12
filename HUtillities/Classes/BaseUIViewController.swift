@@ -257,7 +257,6 @@ private class ProgressIndicator: UIVisualEffectView {
                                  y: 0,
                                  width: width - activityIndicatorSize - 15,
                                  height: height)
-            label.textColor = UIColor.white
             label.font = UIFont.boldSystemFont(ofSize: 17)
         }
     }

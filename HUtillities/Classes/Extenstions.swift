@@ -56,7 +56,9 @@ extension UIView {
     }
     
     // CenterX
-    public func centerX(inView view: UIView, topAnchor: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat? = 0) {
+    public func centerX(inView view: UIView,
+                        topAnchor: NSLayoutYAxisAnchor? = nil,
+                        paddingTop: CGFloat? = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
@@ -66,8 +68,10 @@ extension UIView {
     }
     
     // CenterY
-    public func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil,
-                 paddingLeft: CGFloat = 0, constant: CGFloat = 0) {
+    public func centerY(inView view: UIView,
+                        leftAnchor: NSLayoutXAxisAnchor? = nil,
+                        paddingLeft: CGFloat = 0,
+                        constant: CGFloat = 0) {
         
         translatesAutoresizingMaskIntoConstraints = false
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
@@ -85,7 +89,10 @@ extension UIView {
     }
     
     // Set Dimensions
-    public func setDimensions(height: NSLayoutDimension, heightMultiplier: CGFloat, width: NSLayoutDimension, widthMultiplier: CGFloat) {
+    public func setDimensions(height: NSLayoutDimension,
+                              heightMultiplier: CGFloat,
+                              width: NSLayoutDimension,
+                              widthMultiplier: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalTo: height, multiplier: heightMultiplier).isActive = true
         widthAnchor.constraint(equalTo: width, multiplier: widthMultiplier).isActive = true
@@ -109,11 +116,23 @@ extension UIView {
         widthAnchor.constraint(lessThanOrEqualToConstant: width).isActive = true
     }
     
+    // Fill View
+    public func fillIn(view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        anchor(top: view.topAnchor,
+               bottom: view.bottomAnchor,
+               left: view.leftAnchor,
+               right: view.rightAnchor)
+    }
+    
     // Fill SuperView
     public func fillSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
         guard let view = superview else { return }
-        anchor(top: view.topAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor)
+        anchor(top: view.topAnchor,
+               bottom: view.bottomAnchor,
+               left: view.leftAnchor,
+               right: view.rightAnchor)
     }
 }
 
